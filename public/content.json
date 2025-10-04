@@ -1,0 +1,10 @@
+[
+  {
+    "id": "test-post",
+    "title" : "Test Post",
+    "contentSrc" : "posts/test.md",
+    "thumbnailSrc": "thumbnails/computer.jpg",
+    "tags" : [],
+    "date" : "2025-10-04T10:28:59Z"
+  }
+]

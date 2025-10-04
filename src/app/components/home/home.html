@@ -1,0 +1,7 @@
+@for (post of posts(); track post.id) {
+  <a [routerLink]="['/posts', post.id ]">
+    <div>
+      <h5>{{ post.title }}</h5>
+    </div>
+  </a>
+}
