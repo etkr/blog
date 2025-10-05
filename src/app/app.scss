@@ -1,0 +1,29 @@
+@use '@angular/material' as mat;
+
+.content {
+  padding: 1rem;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: flex-end;
+
+  @include mat.toolbar-overrides((
+          container-background-color: var(--mat-sys-primary),
+          container-text-color: var(--mat-sys-on-primary)
+  ));
+
+  button {
+    mat-icon {
+      @include mat.icon-overrides((color: var(--mat-sys-on-primary)));
+    }
+  }
+
+}
+
+footer {
+  p {
+    font: var(--mat-sys-body-small);
+    text-align: center;
+  }
+}

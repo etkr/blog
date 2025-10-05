@@ -1,5 +1,7 @@
 import {
   ApplicationConfig,
+  inject,
+  provideAppInitializer,
   provideBrowserGlobalErrorListeners,
   provideZonelessChangeDetection,
 } from '@angular/core';
@@ -10,6 +12,13 @@ import {
   withEventReplay,
 } from '@angular/platform-browser';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { MatIconRegistry } from '@angular/material/icon';
+
+function registerMaterialSymbols() {
+  return () => {
+    inject(MatIconRegistry).setDefaultFontSetClass('material-symbols-outlined');
+  };
+}
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,5 +27,6 @@ export const appConfig: ApplicationConfig = {
     provideZonelessChangeDetection(),
     provideRouter(appRoutes),
     provideHttpClient(withFetch()),
+    provideAppInitializer(registerMaterialSymbols()),
   ],
 };

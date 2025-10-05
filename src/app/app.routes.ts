@@ -1,6 +1,7 @@
 import { Route } from '@angular/router';
 import { Home } from './components/home/home';
 import { Post } from './components/post/post';
+import { About } from './components/about/about';
 
 export const appRoutes: Route[] = [
   {
@@ -10,6 +11,10 @@ export const appRoutes: Route[] = [
   {
     path: 'posts/:id',
     component: Post,
+  },
+  {
+    path: 'about',
+    component: About,
   },
   {
     path: '',
